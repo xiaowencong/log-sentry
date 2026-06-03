@@ -320,10 +320,31 @@ docker-compose up -d
 
 ---
 ### 部分演示
-![img_2.png](img_2.png)
-![img_1.png](img_1.png)
-![img_3.png](img_3.png)
-![img.png](img.png)
+![img_2.png](imgs/img_2.png)
+![img_1.png](imgs/img_1.png)
+![img_3.png](imgs/img_3.png)
+![img.png](imgs/img.png)
+---
+
+## 联系作者
+
+如果你在使用过程中遇到问题，或对项目有任何建议、合作意向，欢迎通过以下方式联系我：
+
+| 方式 | 账号                  |
+|------|---------------------|
+| 微信 | `cc15000132637`     |
+| 邮箱 | `2236990395@qq.com` |
+
+也欢迎在 GitHub 提 [Issue](https://github.com/xiaowencong/log-sentry/issues) 或 PR，一起把项目做得更好。
+
+---
+
+## 打赏支持
+
+如果这个项目对你有帮助，欢迎请我喝杯咖啡 ☕，你的支持是持续更新的动力：
+
+![wx.jpg](imgs/wx.jpg)
+
 ---
 
 ## 致谢

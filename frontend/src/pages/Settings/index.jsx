@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {Alert, Card, Col, Descriptions, Row, Spin, Statistic, Tag, Typography} from 'antd'
+import {Alert, Button, Card, Col, Descriptions, Row, Space, Spin, Statistic, Tag, Typography} from 'antd'
 import {
     ApiOutlined,
     CheckCircleOutlined,
@@ -7,11 +7,15 @@ import {
     CloseCircleOutlined,
     CloudServerOutlined,
     DatabaseOutlined,
+    GithubOutlined,
     SafetyCertificateOutlined,
+    StarOutlined,
     ThunderboltOutlined,
 } from '@ant-design/icons'
 
-const {Title, Text, Paragraph} = Typography
+const {Title, Text, Paragraph, Link} = Typography
+
+const GITHUB_URL = 'https://github.com/xiaowencong/log-sentry'
 
 export default function Settings() {
     const [status, setStatus] = useState(null)
@@ -196,6 +200,47 @@ export default function Settings() {
                     </Card>
                 </Col>
             </Row>
+
+            {/* 关于项目 */}
+            <Card
+                title={<><GithubOutlined/> 关于项目</>}
+                style={{marginTop: 8}}
+                extra={
+                    <Space>
+                        <Button
+                            type="primary"
+                            icon={<GithubOutlined/>}
+                            href={GITHUB_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            查看源码
+                        </Button>
+                        <Button
+                            icon={<StarOutlined/>}
+                            href={`${GITHUB_URL}/stargazers`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Star 一下
+                        </Button>
+                    </Space>
+                }
+            >
+                <Paragraph style={{marginBottom: 8}}>
+                    Log-Sentry 是一个开源的日志智能分析平台，结合规则引擎与 AI 大模型，
+                    自动识别异常、聚合问题并生成报告。
+                </Paragraph>
+                <Paragraph style={{marginBottom: 0}}>
+                    项目地址：
+                    <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                        {GITHUB_URL.replace('https://', '')}
+                    </Link>
+                    <Text type="secondary" style={{marginLeft: 12}}>
+                        欢迎 Issue / PR / Star
+                    </Text>
+                </Paragraph>
+            </Card>
         </div>
     )
 }
