@@ -323,10 +323,7 @@ docker-compose up -d
 ![img_2.png](img_2.png)
 ![img_1.png](img_1.png)
 ![img_3.png](img_3.png)
-![img.png](img.png)## License
-
-MIT License
-
+![img.png](img.png)
 ---
 
 ## 致谢
