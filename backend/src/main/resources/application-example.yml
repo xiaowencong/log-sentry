@@ -1,0 +1,62 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: log-sentry
+
+  # MySQL 数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/log_sentry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true&autoReconnect=true&keepAlive=true&tcpKeepAlive=true
+    username: root
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+# 日志级别
+logging:
+  level:
+    org.hibernate.engine.jdbc.spi.SqlExceptionHelper: WARN
+
+  # Redis
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 3000ms
+
+# DeepSeek API 配置
+deepseek:
+  api:
+    key: sk-your-deepseek-api-key
+    url: https://api.deepseek.com/chat/completions
+    model: deepseek-chat
+    max-tokens: 4096
+    temperature: 0.3
+
+# 日志采集配置
+log-sentry:
+  collector:
+    # 轮询间隔 (ms)
+    poll-interval: 500
+    # 单次最大读取行数
+    max-batch-lines: 5000
+    # 全量扫描每批行数
+    full-scan-batch-lines: 10000
+    # 全量扫描批次间隔 (ms)
+    full-scan-batch-interval: 100
+  ai:
+    # API 限流: 每分钟最大调用次数
+    rate-limit-per-minute: 10
+    # 分析结果缓存时间 (小时)
+    cache-hours: 24
+  aggregator:
+    # 同类错误聚合时间窗口 (分钟)
+    window-minutes: 5
