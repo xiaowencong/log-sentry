@@ -1,6 +1,7 @@
 # Log-Sentry
 
-**智能日志分析与风险告警平台** — 自动采集应用日志中的异常信息，通过规则引擎 + DeepSeek AI 双重分析，识别系统运行风险并生成处理建议。
+**智能日志分析与风险告警平台** — 自动采集JAVA应用日志中的异常信息，通过规则引擎 + DeepSeek AI 双重分析，识别系统运行风险并生成处理建议。
+
 
 > 仅采集 ERROR/WARN 级别日志，正常日志不存储，轻量高效。
 
@@ -318,8 +319,11 @@ docker-compose up -d
 4. 运行：`java -jar backend/target/log-sentry-1.0-SNAPSHOT.jar`
 
 ---
-
-## License
+### 部分演示
+![img_2.png](img_2.png)
+![img_1.png](img_1.png)
+![img_3.png](img_3.png)
+![img.png](img.png)## License
 
 MIT License
 
